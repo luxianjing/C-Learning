@@ -29,17 +29,39 @@ struct node
  	struct node *ptemp;
  	ptemp=phead->next;
  	while(ptemp!=NULL){
- 		printf("%d",ptemp->date);
+ 		printf("%d ",ptemp->date);
  		ptemp=ptemp->next;
 	 }
  }
  
+  struct node *Insert(struct node *phead)
+ {
+	int m,x, j;
+ 	struct node *p,*pnew;
+ 	p=phead;
+ 	printf("请输入插入数据的位置:\n");
+ 	scanf("%d",&j);
+ 	printf("请输入插入的数据:\n");
+ 	scanf("%d",&x);
+ 	for(m=1;m<j;m++)
+ 	{
+ 		p=p->next ;
+	 }
+	pnew=(struct node*)malloc(sizeof(struct node));
+	pnew->date =x;
+	pnew->next=p->next ;
+	p->next =pnew;
+	return phead;
+ 	
+ }
+
+
  int main()
  {
  	struct node *pHead;
- 	pHead=creat(); 
+ 	int j;
+ 	pHead=creat();
+	pHead=Insert(pHead); 
  	print(pHead);
-    
-    
-  } 
+ } 
  
